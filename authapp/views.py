@@ -593,12 +593,14 @@ def submit(request):
             time = data.get('time',None)
             if(data.get('car') == 'car1'):
                 carNum = Car1.objects.create(day=day, time=time)
+                carNum = "car1"
                 
             else :
-                carNum = Car2.objects.create(day=day, time=time)
+                Car2.objects.create(day=day, time=time)
+                carNum ="car2"
                 
             Booking.objects.create(user_id=user_id,dog=data.get('dog'),total=data.get('total'),
-                               service=json.dumps(data.get('service')),location=data.get('location'),day=day,time=time,carNumber=data.get('car')) 
+                               service=json.dumps(data.get('service')),location=data.get('location'),day=day,time=time,carNumber=carNum) 
         else :
             day = data.get('day',None)
             time1 = data.get('time1',None)
@@ -607,13 +609,14 @@ def submit(request):
             if(data.get('car') == 'car1'):
                 Car1.objects.create(day=day, time=time1)
                 Car1.objects.create(day=day, time=time2)
+                carNum = "car1"
                 
             else :
                 Car2.objects.create(day=day, time=time1)
                 Car2.objects.create(day=day, time=time2)
-                
+                carNum = "car2"
             Booking.objects.create(user_id=user_id,dog=json.dumps(data.get('dog')),total=data.get('total'),
-                               service=json.dumps(data.get('service')),location=data.get('location'),day=day,time=totaltime,carNumber=data.get('car')
+                               service=json.dumps(data.get('service')),location=data.get('location'),day=day,time=totaltime,carNumber=carNum
                             )
 
     return JsonResponse({'data': x})
