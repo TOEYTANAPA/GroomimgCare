@@ -43,11 +43,8 @@ def register(request):
     variables = RequestContext(request, {
     'form': form
     })
- 
-    return render_to_response(
-    'registration/register.html',
-    variables,
-    )
+    return render(request, 'registration/register.html', {'form': form})
+   
 
 def register_success(request):
     user = Person.objects.get(email=request.user.username)
