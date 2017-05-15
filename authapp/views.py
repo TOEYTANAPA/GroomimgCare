@@ -393,47 +393,53 @@ def user_profile(request):
             dog = Dog.objects.get(id=dID[0])
             dog2 = Dog.objects.get(id=dID[1])
             split = map(int, re.findall(r'\d+', booking[i].time))
-            if split[0]  == 1:
+            print "split: ",split
+            if split[0] == 1:
                 t1 = "9:00-11:00 "
-            elif split[0]  == 2:
+            elif split[0] == 2:
                 t1= "11:00-13:00 "
-            elif split[0]  == 3:
+            elif split[0] == 3:
                 t1= "11:00-13:00 "    
-            elif split[0]  == 4:
+            elif split[0] == 4:
                 t1= "11:00-13:00 "
-            elif split[0]  == 5:
+            elif split[0] == 5:
                 t1= "11:00-13:00 "
-            elif split[0]  == 6:
+            elif split[0] == 6:
                 t1= "19:00-21:00 "
 
-            if split[1]  == 1:
+            if split[1] == 1:
                 time2 = "9:00-11:00"
-            elif split[1]  == 2:
+            elif split[1] == 2:
                 time2= "11:00-13:00 "
-            elif split[1]  == 3:
+            elif split[1] == 3:
                 time2= "11:00-13:00 "    
-            elif split[1]  == 4:
+            elif split[1] == 4:
                 time2= "11:00-13:00 "
-            elif split[1]  == 5:
+            elif split[1] == 5:
                 time2= "11:00-13:00 "
-            elif split[1]  == 6:
+            elif split[1] == 6:
                 time2= "19:00-21:00 "    
             temp = t1+time2
             d = {'id':booking[i].id,'day':day+"",'dogName':""+dog.name+" and "+dog2.name,'total':booking[i].total,'time':temp}
         elif len(dID)==1:
             dog = Dog.objects.get(id=dID[0])
-            if split[0]  == 1:
+            print "booking[i].time: ",booking[i].time
+            time = booking[i].time
+            if time == '1':
                 time1 = "9:00-11:00 "
-            elif split[0]  == 2:
+            elif time == '2':
                 time1= "11:00-13:00 "
-            elif split[0]  == 3:
+            elif time == '3':
                 time1= "11:00-13:00 "    
-            elif split[0]  == 4:
+            elif time == '4':
                 time1= "11:00-13:00 "
-            elif split[0]  == 5:
+            elif time == '5':
                 time1= "11:00-13:00 "
-            elif split[0]  == 6:
-                time1= "19:00-21:00 "
+            elif time == '6':
+                time1= "19:00-21:00 "    
+            else:
+                print"NOTOIMEEEEEEEEEEEEEEEEEEEEEEEE"
+
             d = {'id':booking[i].id,'day':day+"",'dogName':""+dog.name,'total':booking[i].total,'time':time1}
          
         listofobjs.append(d)
