@@ -112,7 +112,7 @@ def home(request):
         # print "email: ",social.extra_data['email']
         print "facebookkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
       
-        if not Person.objects.get(username=request.user.username):
+        if not Person.objects.get(password=request.user.password):
             person = Person.objects.create(
             username=request.user.username,    
             email='',
@@ -122,7 +122,7 @@ def home(request):
             redirect_url = reverse('profile', args=[person.id])
             return HttpResponseRedirect(redirect_url)
         else:
-            pnow = Person.objects.get(username=request.user.username)
+            pnow = Person.objects.get(password=request.user.password)
             print"email: ",pnow.email
             return render(request, 'service.html',{'current_user':pnow,'review_list':review_list})   
     else:
@@ -151,7 +151,7 @@ def contact(request):
              provider_string += name.lower().replace('-', '_')
     social = 'facebook'        
     if provider_string.encode('utf8') == social:
-        pnow = Person.objects.get(username=request.user.username)
+        pnow = Person.objects.get(password=request.user.password)
     else:
         pnow = Person.objects.get(email=request.user.username)
 
@@ -171,7 +171,7 @@ def comment_list(request):
              provider_string += name.lower().replace('-', '_')
     social = 'facebook'        
     if provider_string.encode('utf8') == social:
-        pnow = Person.objects.get(username=request.user.username)
+        pnow = Person.objects.get(password=request.user.password)
     else:
         pnow = Person.objects.get(email=request.user.username)
 
@@ -193,7 +193,7 @@ def add_comment(request):
              provider_string += name.lower().replace('-', '_')
     social = 'facebook'        
     if provider_string.encode('utf8') == social:
-        pnow = Person.objects.get(username=request.user.username)
+        pnow = Person.objects.get(password=request.user.password)
     else:
         pnow = Person.objects.get(email=request.user.username)
     if request.method == 'POST':
@@ -241,7 +241,7 @@ def summit_comment(request):
              provider_string += name.lower().replace('-', '_')
     social = 'facebook'        
     if provider_string.encode('utf8') == social:
-        pnow = Person.objects.get(username=request.user.username)
+        pnow = Person.objects.get(password=request.user.password)
     else:
         pnow = Person.objects.get(email=request.user.username)
     
@@ -285,7 +285,7 @@ def addDogs(request):
              provider_string += name.lower().replace('-', '_')
     social = 'facebook'        
     if provider_string.encode('utf8') == social:
-        pnow = Person.objects.get(username=request.user.username)
+        pnow = Person.objects.get(password=request.user.password)
     else:
         pnow = Person.objects.get(email=request.user.username)
     
@@ -330,7 +330,7 @@ def booking_delete(request, pk, template_name='profile.html'):
     if item.carNumber =="car1":
         
         for i in range(len(split)):
-            carItem = Car2.objects.get(day=item.day,time=split[i])
+            carItem = Car1.objects.get(day=item.day,time=split[i])
             carItem.delete()
         # carItem = Car1.objects.get(day=item.day,time=item.time) 
 
@@ -364,7 +364,7 @@ def user_profile(request):
              provider_string += name.lower().replace('-', '_')
     social = 'facebook'
     if provider_string.encode('utf8') == social:
-        user = Person.objects.get(username=request.user.username)
+        user = Person.objects.get(password=request.user.password)
     else:
         user = Person.objects.get(email=request.user.username)
     booking = Booking.objects.filter(user_id=user.id)
@@ -529,7 +529,7 @@ def IndexView(request):
              provider_string += name.lower().replace('-', '_')
     social = 'facebook'        
     if provider_string.encode('utf8') == social:
-        pnow = Person.objects.get(username=request.user.username)
+        pnow = Person.objects.get(password=request.user.password)
     
     else:
         pnow = Person.objects.get(email=request.user.username)
@@ -640,7 +640,7 @@ def service(request):
              provider_string += name.lower().replace('-', '_')
     social = 'facebook'        
     if provider_string.encode('utf8') == social:
-        pnow = Person.objects.get(username=request.user.username)
+        pnow = Person.objects.get(password=request.user.password)
     
     else:
         pnow = Person.objects.get(email=request.user.username)
@@ -661,7 +661,7 @@ def receipt(request,data):
              provider_string += name.lower().replace('-', '_')
     social = 'facebook'        
     if provider_string.encode('utf8') == social:
-        pnow = Person.objects.get(username=request.user.username)
+        pnow = Person.objects.get(password=request.user.password)
     
     else:
         pnow = Person.objects.get(email=request.user.username)
