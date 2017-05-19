@@ -104,39 +104,63 @@ h1 {
     color: white;
     /*font-weight: bold;*/
 }
+#nameNav{
+    float: right;
+    font-size: 18px;
+    margin-top: 28px; 
+    font-weight: 600;
+    font-family: 'Roboto Condensed', sans-serif;"
+}
 </style>
 <div class="homeBG">
     <!-- banner -->
     <!-- banner -->
-    <div class="header" >
-        <div class="container">
-            <div class="header-right">
-                <div class="top-nav">
-                    <nav class="navbar navbar-default">
-                        <div class="navbar-header">
-                        </div>
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <img src="{% static 'images/Logo.png' %}" width="10%" height="10%" style="margin-top: -30px">
-                            <ul class="nav navbar-nav">
-                                          <li><a class="active" href="/service">Home</a></li>
-                                            <li><a href="/booking">Booking</a></li>
+ <!-- banner -->
+<div class="header">
+ 
+
+    <div class="container">
+
+        <br>
+      <p id="nameNav"><i class="fa fa-user" aria-hidden="true"></i> {{ current_user.username }}  <a style="color: #3276B1;font-weight: bold;" href="/logout/">Logout</a></p>
+
+     
+                        <!-- <div class="clearfix"> </div> -->
+                           <!--  </li>
+                            <li></li> -->
+        <div class="header-right">
+            <div class="top-nav">
+                
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                        <img src="{% static 'images/logo2.png' %}" width="13%" height="13%" style="margin-top: -40px;float: left;">
+                            <li><a class="active" href="/service">Home</a></li>
+                            <li><a href="/booking">Booking</a></li>
                             <li><a href="/profile">Profile</a></li>
-                      
                             <li><a href="/comment">Comment</a></li>
                             <li><a href="/contact">Contact</a></li>
-                            <li>
-                                <p id="username"> {{ current_user.username }}</p>
-                            </li>
-                            <li><a href="/logout/">Logout</a></li>
-                            </ul>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </nav>
-                </div>
+                           
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+            <div class="header-right">
+              
             </div>
         </div>
     </div>
+</div>
+<!-- //banner -->
 </div>
 <br>
 <br>

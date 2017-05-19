@@ -94,9 +94,40 @@
         text-align: center;
         font-family: 'Roboto Condensed', sans-serif;
     }
+    .header-right{
+    float: left;
+    /*margin: 1.4em 0 0 0;*/
+}
+/*-- top-nav --*/
+.top-nav{
+    margin: .5em 0 0 0;
+    float: left;
+}
+.top-nav ul{
+    padding: 0;
+    margin: 0;
+}
+.top-nav ul li{
+    display: inline-block;
+    margin: 0 1em;
+    float: left;
+}
+.top-nav ul li:nth-child(6){
+    margin-right:0;
+}
+ul.nav.navbar-nav {
+    float: left;
+}
+.navbar-default{
+    background: none;
+    border: none;
+    margin: 0;
+}
     </style>
     <!-- <div class="container"> -->
-    {% block content %}{% endblock content %}
+    {% block content %}
+
+  {% endblock content %}
     <!-- </div> -->
 </body>
 {% block script %} {% endblock script %}

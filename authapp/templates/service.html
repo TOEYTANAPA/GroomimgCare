@@ -17,6 +17,7 @@ html {
     margin: 0;
     padding: 0;
     text-align: center;
+
 }
 
 .ih-item {
@@ -526,59 +527,96 @@ hr.style-two {
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
 }
+
+h3{
+    float: right;
+    font-size: 18px;
+    margin-top: 28px; 
+    font-weight: 600;
+    font-family: 'Roboto Condensed', sans-serif;"
+}
 </style>
 {% load static %}
+
 <!-- banner -->
-<div class="header" style="background: transparent;">
+<div class="header">
+ 
+
     <div class="container">
+
         <br>
+      <h3 ><i class="fa fa-user" aria-hidden="true"></i> {{ current_user.username }}  <a  href="/logout/">Logout</a></h3>
+
+     
+                        <!-- <div class="clearfix"> </div> -->
+                           <!--  </li>
+                            <li></li> -->
         <div class="header-right">
             <div class="top-nav">
+                
                 <nav class="navbar navbar-default">
                     <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
                     </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <img src="{% static 'images/Logo.png' %}" width="10%" height="10%" style="margin-top: -30px">
                         <ul class="nav navbar-nav">
+                        <img src="{% static 'images/logo2.png' %}" width="13%" height="13%" style="margin-top: -40px;float: left;">
                             <li><a class="active" href="/service">Home</a></li>
-                              <li><a href="/booking">Booking</a></li>
+                            <li><a href="/booking">Booking</a></li>
                             <li><a href="/profile">Profile</a></li>
                             <li><a href="/comment">Comment</a></li>
                             <li><a href="/contact">Contact</a></li>
-                            <li>
-                                <p id="username"> {{ current_user.username }}</p>
-                            </li>
-                            <li><a href="/logout/">Logout</a></li>
+                           
                         </ul>
-                        <div class="clearfix"> </div>
+
                     </div>
                 </nav>
+            </div>
+            <div class="header-right">
+              
             </div>
         </div>
     </div>
 </div>
 <!-- //banner -->
-    <div class="bghead ">
-        <br>  <br>
-        <br>
-        <br>  <br>     <br>  <br>     <br>  <br>
-        <br>
-        <h2>GROOMING WITH CARE</h2>
-        <br>
-        <br>  <br>
-        <br>  <br>     <br>  <br>
-      
-           <br>  <br>
-        <br>
-    </div>
+<div class="bghead ">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>GROOMING WITH CARE</h2>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
 <div class="container">
-
     <!-- service -->
     <div class="jumbotron">
         <div class="row">
-          <h3 style="font-size: 50px;">OUR SERVICES</h3><br><br>
-            <p>You will get all the SERVICES  </p> <br><br>
+            <h3 style="font-size: 50px;">OUR SERVICES</h3>
+            <br>
+            <br>
+            <p>You will get all the SERVICES </p>
+            <br>
+            <br>
             <div class="col-sm-4">
                 <!-- normal -->
                 <div class="ih-item circle effect17 col-centered">
@@ -763,26 +801,20 @@ hr.style-two {
             </div>
             {% endfor %}
         </div>
-       
         <!-- </div> -->
         <!-- </div> -->
     </div>
 </div>
-<div style="    background-color: #373737;" >
+<div style="    background-color: #373737;">
     <br>
     <br>
     <br>
     <!-- <span class="title">EASY  FAST  RELIABLE</span> -->
     <br>
     <!-- <a href="http://google.com" class="button">Go to Google</a> -->
-   
     <br>
     <br>
     <br>
     <br>
-    
-  
 </div>
- {% endblock content %} 
-
-
+{% endblock content %}
